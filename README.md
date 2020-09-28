@@ -3,9 +3,9 @@
 ##users テーブ
 ｜ Columu                | Type            | Options       |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _  | 
-｜ nickname              | string          | nall: false   |
-｜ email                 | string          | nall: false   |
-｜ password              | string          | nall: false   |
+｜ nickname              | string          | null: false   |
+｜ email                 | string          | null: false   |
+｜ password              | string          | null: false   |
 ｜ first_name            | string          | null: false   |
 ｜ last_name             | string          | null: false   |
 ｜ first_name_k          | string          | null: false   |
@@ -20,9 +20,9 @@ has_many :purchases
 ##items テーブル
 ｜ Columu                | Type            | Options                       |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _  | 
-｜ prodact_name          | string          | nall: false                   |
-｜ comment               | text            | nall: false                   |
-｜ category_id           | integer         | nall: false                   |
+｜ prodact_name          | string          | null: false                   |
+｜ comment               | text            | null: false                   |
+｜ category_id           | integer         | null: false                   |
 ｜ status_id             | integer         | null: false                   |
 ｜ burden_id             | integer         | null: false                   |
 ｜ area_id               | integer         | null: false                   |
@@ -38,10 +38,10 @@ has_one :purchase
 ##addresses テーブル
 ｜ Columu                | Type            | Options                       |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _  |
-｜ zip_code              | string          | nall: false                   |
-｜ prefectures_id        | integer         | nall: false                   |
-｜ cities                | string          | nall: false                   |
-｜ street_number         | string          | nall: false                   |
+｜ zip_code              | string          | null: false                   |
+｜ prefectures_id        | integer         | null: false                   |
+｜ cities                | string          | null: false                   |
+｜ street_number         | string          | null: false                   |
 ｜ billding_name         | string          |                               |
 ｜ phone_number          | string          | null: false                   |
 ｜ purchase_id           | integer         | null: false, foregin_key: true|

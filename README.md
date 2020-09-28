@@ -38,7 +38,7 @@ has_many :purchases
 ｜ Columu                | Type            | Options          |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ |
 ｜ zip_code              | string          | nall: false      |
-｜ prefectures           | string          | nall: false      |
+｜ prefectures_id        | integer         | nall: false      |
 ｜ cities                | string          | nall: false      |
 ｜ street_number         | string          | nall: false      |
 ｜ billding_name         | string          |                  |

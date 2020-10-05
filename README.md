@@ -26,7 +26,7 @@ has_many :purchases
 ｜ status_id             | integer         | null: false                   |
 ｜ burden_id             | integer         | null: false                   |
 ｜ area_id               | integer         | null: false                   |
-｜ days_id               | integer         | null: false                   |
+｜ day_id                | integer         | null: false                   |
 ｜ money                 | integer         | null: false                   |
 ｜ user_id               | integer         | null: false, foregin_key: true|
 

@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index]
-  def index  
+  def index
   end
 
-  def new  
+  def new
   end
 
   def create

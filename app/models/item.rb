@@ -9,5 +9,16 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   
-  validates :category_id, numericality: {other_than: 0}
+  with_options numericality: {other_than: 0} do
+    validates :category_id
+    validates :status_id
+    validates :burden_id
+    validates :area_id
+    validates :day_id
+  end
+  with_options presence: true do
+    validates :prodact_name
+    validates :comment
+    validates :money,       format: { with: /\A[0-9]+\z/i}, numericality: {greater_than_or_equal_to: 300}
+  end
 end

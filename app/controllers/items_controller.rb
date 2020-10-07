@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    if @item.save 
+    if @item.save
       redirect_to root_path
     else
       render new_item_path
@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
     item.update(item_params)
   end
 
-  
   private
 
   def item_params
@@ -32,8 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to root_path
-    end
+    redirect_to root_path unless user_signed_in?
   end
 end

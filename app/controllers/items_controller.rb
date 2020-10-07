@@ -16,13 +16,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  def delete
-  end
+  # def delete
+  # end
 
-  def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-  end
+  # def update
+  #   item = Item.find(params[:id])
+  #   item.update(item_params)
+  # end
 
   private
 

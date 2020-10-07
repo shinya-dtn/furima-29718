@@ -15,6 +15,10 @@ RSpec.describe Item, type: :model do
         @item.money = '300'
         expect(@item).to be_valid
       end
+      it 'moneyが9999999以下だと保存できる' do
+        @item.money = '9999999'
+        expect(@item).to be_valid
+      end
       it 'moneyが半角数字だと保存できる' do
         @item.money = '300'
         expect(@item).to be_valid
@@ -71,6 +75,11 @@ RSpec.describe Item, type: :model do
         @item.money = '299'
         @item.valid?
         expect(@item.errors.full_messages).to include('Money must be greater than or equal to 300')
+      end
+      it 'moneyが10,000,000以上だと保存できない' do
+        @item.money = '10000000'
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Money must be less than or equal to 9999999")
       end
       it 'moneyが全角数字だと保存できない' do
         @item.money = '０００'

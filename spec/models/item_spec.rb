@@ -79,7 +79,7 @@ RSpec.describe Item, type: :model do
       it 'moneyが10,000,000以上だと保存できない' do
         @item.money = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Money must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Money must be less than or equal to 9999999')
       end
       it 'moneyが全角数字だと保存できない' do
         @item.money = '０００'

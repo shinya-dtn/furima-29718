@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render new_item_path
+      render :new
     end
   end
 
@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to item_path
     else
-      render edit_item_path
+      render :edit
     end
   end
 

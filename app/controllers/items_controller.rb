@@ -25,7 +25,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    redirect_to items_path if @item.destroy
+    if @item.destroy
+      redirect_to items_path 
+    else
+      render :edit
+    end
   end
 
   def update

@@ -8,7 +8,7 @@ function money (){
       feeForm.innerHTML = fee;
     let profitForm = document.getElementById("profit");
       profitForm.innerHTML = profit;
-  })
+  });
 }
 window.addEventListener('load', money)
 

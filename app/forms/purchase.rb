@@ -9,10 +9,10 @@ class Purchase
 
   with_options presence: true do
     validates :token
-    validates :zip_code,         format: {with: /\A\d{3}[-]\d{4}\z/}
-    validates :city             
-    validates :street_number     
-    validates :phone_number,      length: {maximum: 11}
+    validates :zip_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
+    validates :city
+    validates :street_number
+    validates :phone_number, length: { maximum: 11 }
   end
-  validates :area_id,          numericality: { other_than: 0 }
+  validates :area_id, numericality: { other_than: 0 }
 end

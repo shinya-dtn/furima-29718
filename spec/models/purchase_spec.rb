@@ -11,11 +11,11 @@ RSpec.describe Purchase, type: :model do
         expect(@purchase).to be_valid
       end
       it 'zip_codeに、-があると保存できる' do
-        @purchase.zip_code = "111-1111"
+        @purchase.zip_code = '111-1111'
         expect(@purchase).to be_valid
       end
       it 'phone_numberが11桁だと保存できる' do
-        @purchase.phone_number = "00000000000"
+        @purchase.phone_number = '00000000000'
         expect(@purchase).to be_valid
       end
     end
@@ -34,12 +34,12 @@ RSpec.describe Purchase, type: :model do
       it 'zip_codeに、-がないと保存できない' do
         @purchase.zip_code = '1111111'
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("Zip code is invalid")
+        expect(@purchase.errors.full_messages).to include('Zip code is invalid')
       end
       it 'area_idが0だと保存できない' do
         @purchase.area_id = '0'
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("Area must be other than 0")
+        expect(@purchase.errors.full_messages).to include('Area must be other than 0')
       end
       it 'cityが空だと保存できない' do
         @purchase.city = ''
@@ -59,7 +59,7 @@ RSpec.describe Purchase, type: :model do
       it 'phone_numberが12桁以上だと保存できない' do
         @purchase.phone_number = '000000000000'
         @purchase.valid?
-        expect(@purchase.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+        expect(@purchase.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
     end
   end

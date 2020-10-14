@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :move_to_index, expect: [:index]
   before_action :set_item, only: [:index, :create]
-  def index
-  end
+  before_action :move_to_order, only: [:index]
+  # def index
+  # end
+  
 
   def create
     @order = Purchase.new(order_params)
@@ -14,12 +15,21 @@ class OrdersController < ApplicationController
       render :index
     end
   end
-
+  
   private
 
-  def move_to_index
-    redirect_to root_path unless user_signed_in?
+  def move_to_order
+    if user_signed_in? == false
+      redirect_to root_path
+      return
+    end
+
+    if @item.order || current_user.id == @item.user_id
+      redirect_to root_path
+    end
+
   end
+
 
   def order_params
     params.permit(:zip_code, :area_id, :city, :street_number, :billding_name, :phone_number, :order_id).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])

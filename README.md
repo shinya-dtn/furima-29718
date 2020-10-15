@@ -15,7 +15,7 @@
 ### Association
 
 has_many :items
-has_many :purchases
+has_many :orders
 
 ##items テーブル
 ｜ Columu                | Type            | Options                       |
@@ -33,24 +33,24 @@ has_many :purchases
 ### Association
 
 belongs_to :user
-has_one :purchase
+has_one :order
 
 ##addresses テーブル
 ｜ Columu                | Type            | Options                       |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _  |
 ｜ zip_code              | string          | null: false                   |
-｜ prefectures_id        | integer         | null: false                   |
-｜ cities                | string          | null: false                   |
+｜ area_id               | integer         | null: false                   |
+｜ city                  | string          | null: false                   |
 ｜ street_number         | string          | null: false                   |
 ｜ billding_name         | string          |                               |
 ｜ phone_number          | string          | null: false                   |
-｜ purchase_id           | integer         | null: false, foregin_key: true|
+｜ order_id              | integer         | null: false, foregin_key: true|
 
 ### Association
 
-belonds_to :purchase
+belongs_to :order
 
-## purchases テーブル
+## orders テーブル
 ｜ Columu                | Type            | Options                       |
 ｜_ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _| 
 ｜ user_id               | integer         | null: false, foregin_key: true|

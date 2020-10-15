@@ -1,12 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :move_to_order, only: [:index]
-  # def index
-  # end
   
-
   def create
-    @order = Purchase.new(order_params)
     if @order.valid?
       pay_item
       @order.save
@@ -15,7 +11,7 @@ class OrdersController < ApplicationController
       render :index
     end
   end
-  
+
   private
 
   def move_to_order
@@ -46,5 +42,6 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+    @order = Purchase.new(order_params)
   end
 end

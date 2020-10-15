@@ -10,14 +10,6 @@ RSpec.describe Purchase, type: :model do
       it 'token,zip_code,area_id,city,street_number,phone_number全てあれば保存できる' do
         expect(@purchase).to be_valid
       end
-      it 'zip_codeに、-があると保存できる' do
-        @purchase.zip_code = '111-1111'
-        expect(@purchase).to be_valid
-      end
-      it 'phone_numberが11桁だと保存できる' do
-        @purchase.phone_number = '00000000000'
-        expect(@purchase).to be_valid
-      end
     end
 
     context '購入情報が保存できない時' do

@@ -29,7 +29,7 @@ RSpec.describe Purchase, type: :model do
         expect(@purchase.errors.full_messages).to include('Zip code is invalid')
       end
       it 'area_idが0だと保存できない' do
-        @purchase.area_id = '0'
+        @purchase.area_id = 0
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include('Area must be other than 0')
       end

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :move_to_order, only: [:index]
-  
+
   def create
     if @order.valid?
       pay_item
@@ -20,12 +20,8 @@ class OrdersController < ApplicationController
       return
     end
 
-    if @item.order || current_user.id == @item.user_id
-      redirect_to root_path
-    end
-
+    redirect_to root_path if @item.order || current_user.id == @item.user_id
   end
-
 
   def order_params
     params.permit(:zip_code, :area_id, :city, :street_number, :billding_name, :phone_number, :order_id).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])

@@ -54,7 +54,7 @@ RSpec.describe Purchase, type: :model do
         expect(@purchase.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
       it 'phone_numberに-があると保存できない' do
-        @purchase.phone_number = "000-0000-0000"
+        @purchase.phone_number = '000-0000-0000'
         @purchase.valid?
         expect(@purchase.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
